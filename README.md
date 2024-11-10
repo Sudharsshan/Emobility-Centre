@@ -1,20 +1,7 @@
-<<<<<<< HEAD
 # emobility
 
-A new Flutter project.
+A flutter app used to monitor and provide the rental info on lab equipments available in Centre of Emobility, Christ University.
 
-## Getting Started
+## Basic Info
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# Emobility-Centre
->>>>>>> 9f41818f8853885b8fbb59461b01439aa52d5d72
+    This app provides the rental info on the available lab equipments along with an option to book them.
