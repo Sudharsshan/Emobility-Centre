@@ -10,7 +10,8 @@ class TeamsPageTiles extends StatefulWidget {
   TeamsPageTilesState createState() => TeamsPageTilesState();
 }
 
-class TeamsPageTilesState extends State<TeamsPageTiles> with SingleTickerProviderStateMixin {
+class TeamsPageTilesState extends State<TeamsPageTiles>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
 
@@ -142,17 +143,20 @@ class TeamsPageTilesState extends State<TeamsPageTiles> with SingleTickerProvide
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         // Icon and vertical line design
-        Column(
-          children: [
-            const SizedBox(height: 28),
-            const Icon(Icons.battery_0_bar),
-            const SizedBox(height: 5),
-            Container(
-              height: memberCount * 20.0,
-              width: 2,
-              color: secondaryColor,
-            ),
-          ],
+        SizedBox(
+          width: 22,
+          child: Column(
+            children: [
+              const SizedBox(height: 28),
+              const Icon(Icons.battery_0_bar),
+              const SizedBox(height: 5),
+              Container(
+                height: memberCount * 20.0,
+                width: 2,
+                color: secondaryColor,
+              ),
+            ],
+          ),
         ),
 
         // Team members tiles with updated styling and minimal design
@@ -196,7 +200,8 @@ class TeamsPageTilesState extends State<TeamsPageTiles> with SingleTickerProvide
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: memberCount,
                   itemBuilder: (context, index) {
-                    return Text('• ${members[memberIndex + index]}', style: contextStyle);
+                    return Text('• ${members[memberIndex + index]}',
+                        style: contextStyle);
                   },
                 ),
               ),
