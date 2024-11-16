@@ -117,6 +117,7 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
 
     List<String> titles = AboutPageContent().titles;
     List<String> description = AboutPageContent().description;
+    List<String> imgPath = AboutPageContent().profilePicPath;
 
     // Animation for individual tiles
     Animation<double> tileFadeAnimation = Tween<double>(
@@ -152,10 +153,14 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Icon or image placeholder
-            Image.asset(
-              'lib/images/accounts.png',
-              scale: 7.5,
-            ),
+            Container(
+                width: 45,
+                padding: const EdgeInsets.symmetric(vertical: 5),
+                child: Center(
+                  child: Image.asset(
+                    imgPath[index],
+                  ),
+                )),
             const SizedBox(width: 10),
 
             // Column for title and description

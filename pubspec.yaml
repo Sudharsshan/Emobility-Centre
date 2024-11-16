@@ -87,6 +87,18 @@ flutter:
     - lib/images/equipments/wiring&FixtureTesting.png
     - lib/images/equipments/bmsAlgSoftwares.jpg
 
+    # faculty board images added below
+    - lib/images/facultyBoardImages/fr_shijen.jpg
+    - lib/images/facultyBoardImages/fr_soni_j_c.jpg
+    - lib/images/facultyBoardImages/haneesh_k_m.jpg
+    - lib/images/facultyBoardImages/Harish_Kumar.jpg
+    - lib/images/facultyBoardImages/joseph_x_rodrigues.jpg
+    - lib/images/facultyBoardImages/mari_anita.jpg
+    - lib/images/facultyBoardImages/parag_jose.jpeg
+    - lib/images/facultyBoardImages/pragashK.jpg
+    - lib/images/facultyBoardImages/raghunandan_kumar.jpeg
+    - lib/images/facultyBoardImages/venkataswamy_r.jpeg
+
   fonts:
     - family: playWrite
       fonts:
