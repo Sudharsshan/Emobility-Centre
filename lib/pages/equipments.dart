@@ -1,4 +1,4 @@
-import 'package:emobility/pages/equipments/equipdesccontent.dart';
+import 'package:emobility/pages/equipments/equipment_description.dart';
 import 'package:flutter/material.dart';
 import 'package:emobility/pages/equipments/swiper_widget.dart'; // Import the EquipmentCarousel
 import 'package:emobility/pages/equipments/booking_popup.dart'; // Import the booking popup
@@ -76,20 +76,29 @@ class _EquipmentsPageState extends State<EquipmentsPage>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _fadeAnimation,
-      child: Container(
-        height: MediaQuery.sizeOf(context).height,
-        width: MediaQuery.sizeOf(context).width,
-        padding: const EdgeInsets.all(8.0),
-        child: EquipmentCarousel(
-          equipments: equipments,
-          onBookEquipment: _showBookingPopup, // Pass the booking function
-          onShowParameters:
-              _showParameterPopup, // Pass the parameter popup function
-          equipmentImage: imagePaths,
-          semiDescription: semiDescription,
-          descriptions: descriptions,
-          description: const [], // Pass the descriptions (for parameters)
-        ),
+      child: Column(
+        children: [
+          Container(
+            height: MediaQuery.sizeOf(context).height - 200,
+            width: MediaQuery.sizeOf(context).width,
+            padding: const EdgeInsets.all(8.0),
+            child: EquipmentCarousel(
+              equipments: equipments,
+              onBookEquipment: _showBookingPopup, // Pass the booking function
+              onShowParameters:
+                  _showParameterPopup, // Pass the parameter popup function
+              equipmentImage: imagePaths,
+              semiDescription: semiDescription,
+              descriptions: descriptions,
+              description: const [], // Pass the descriptions (for parameters)
+            ),
+          ),
+
+          // a widget to prevent nav bar overflow
+          const SizedBox(
+            height: 100,
+          )
+        ],
       ),
     );
   }

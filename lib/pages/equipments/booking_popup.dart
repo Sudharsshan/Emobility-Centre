@@ -6,9 +6,10 @@ import 'package:lottie/lottie.dart';
 class BookingPopup extends StatefulWidget {
   final String title;
 
-  BookingPopup({required this.title});
+  const BookingPopup({super.key, required this.title});
 
   @override
+  // ignore: library_private_types_in_public_api
   _BookingPopupState createState() => _BookingPopupState();
 }
 
@@ -29,7 +30,8 @@ class _BookingPopupState extends State<BookingPopup> {
               content: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('Booking Confirmed!', style: TextStyle(fontFamily: 'Playfair Display')),
+                  Text('Booking Confirmed!',
+                      style: TextStyle(fontFamily: 'Playfair Display')),
                 ],
               ),
             )
@@ -42,13 +44,15 @@ class _BookingPopupState extends State<BookingPopup> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Book Equipment: ${widget.title}', style: TextStyle(fontFamily: 'Playfair Display')),
+      title: Text('Book Equipment: ${widget.title}',
+          style: const TextStyle(fontFamily: 'Playfair Display')),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           DateTimeField(
             format: format,
-            decoration: InputDecoration(labelText: 'Select Date and Time'),
+            decoration:
+                const InputDecoration(labelText: 'Select Date and Time'),
             onShowPicker: (context, currentValue) async {
               final date = await showDatePicker(
                 context: context,
@@ -58,8 +62,10 @@ class _BookingPopupState extends State<BookingPopup> {
               );
               if (date != null) {
                 final time = await showTimePicker(
+                  // ignore: use_build_context_synchronously
                   context: context,
-                  initialTime: TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
+                  initialTime:
+                      TimeOfDay.fromDateTime(currentValue ?? DateTime.now()),
                 );
                 return DateTimeField.combine(date, time);
               } else {
@@ -67,13 +73,14 @@ class _BookingPopupState extends State<BookingPopup> {
               }
             },
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           ElevatedButton(
             onPressed: () {
               Navigator.of(context).pop();
               _showConfirmation();
             },
-            child: Text('Confirm Booking', style: TextStyle(fontFamily: 'Playfair Display')),
+            child: const Text('Confirm Booking',
+                style: TextStyle(fontFamily: 'Playfair Display')),
           ),
         ],
       ),
