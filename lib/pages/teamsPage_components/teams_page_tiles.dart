@@ -1,6 +1,5 @@
 import 'package:emobility/pages/teamsPage_components/teams_tile_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart'; // Import for custom fonts
 import '../appTheme/theme_class.dart';
 
 class TeamsPageTiles extends StatefulWidget {
