@@ -1,20 +1,20 @@
-import 'package:emobility/components/custom_Button.dart';
+import 'package:emobility/components/custom_button.dart';
 import 'package:emobility/pages/login_page.dart';
 import 'package:emobility/pages/login_subPages/verify_password.dart';
 import 'package:flutter/material.dart';
 import 'package:emobility/components/my_textfield.dart';
 
+// ignore: camel_case_types
 class forget_password extends StatelessWidget {
   forget_password({super.key});
 
   // text editing controllers
   final emailController = TextEditingController();
+  // ignore: non_constant_identifier_names
   final OTPController = TextEditingController();
-  
-  // sign user in method
-  void verifyOTP() {
 
-  }
+  // sign user in method
+  void verifyOTP() {}
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,6 @@ class forget_password extends StatelessWidget {
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
-
             const SizedBox(height: 80),
 
             // Reset password
@@ -34,8 +33,7 @@ class forget_password extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 38,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
             ),
 
@@ -48,8 +46,7 @@ class forget_password extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
             ),
 
@@ -62,15 +59,16 @@ class forget_password extends StatelessWidget {
               obscureText: false,
             ),
 
-            const SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
 
             // send OTP button
-            custom_Button(
+            CustomButton(
                 buttonData: "Send OTP",
-                onTap: (){
+                onTap: () {
                   // Handle the sending OTP here
-                }
-            ),
+                }),
 
             const SizedBox(height: 60),
 
@@ -81,8 +79,7 @@ class forget_password extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
             ),
 
@@ -98,13 +95,14 @@ class forget_password extends StatelessWidget {
             const SizedBox(height: 10),
 
             // verify OTP
-            custom_Button(
+            CustomButton(
                 buttonData: "Verify OTP",
-                onTap: (){
+                onTap: () {
                   // Handle the OTP verification here
 
                   // Then navigate the user to enter new password page
-                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>verifyPassword()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => verifyPassword()));
                 }),
 
             const SizedBox(height: 35),
@@ -119,9 +117,10 @@ class forget_password extends StatelessWidget {
                 ),
                 const SizedBox(width: 4),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     // Take the user back to login page
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => LoginPage()));
                   },
                   child: const Text(
                     'Sign in',

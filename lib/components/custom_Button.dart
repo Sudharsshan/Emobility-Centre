@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class custom_Button extends StatelessWidget {
+// ignore: camel_case_types
+class CustomButton extends StatelessWidget {
   final Function()? onTap;
   final String buttonData;
 
-  const custom_Button({super.key, required this.onTap, required this.buttonData});
+  const CustomButton(
+      {super.key, required this.onTap, required this.buttonData});
 
   @override
   Widget build(BuildContext context) {

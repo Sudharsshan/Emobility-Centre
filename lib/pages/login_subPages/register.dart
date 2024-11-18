@@ -1,4 +1,4 @@
-import 'package:emobility/components/custom_Button.dart';
+import 'package:emobility/components/custom_button.dart';
 import 'package:emobility/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:emobility/components/my_textfield.dart';
@@ -21,15 +21,13 @@ class Register extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               // REGISTER
               const Text(
                 'Register',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 38,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 25),
@@ -71,17 +69,20 @@ class Register extends StatelessWidget {
               const SizedBox(height: 25),
 
               // register button
-              custom_Button(
+              CustomButton(
                 buttonData: "Register",
-                onTap: (){
+                onTap: () {
                   // Handle the registration here
 
                   //Navigate the user to Login
-                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (BuildContext context) => LoginPage()));
                 },
               ),
 
-              const SizedBox(height: 50,),
+              const SizedBox(
+                height: 50,
+              ),
 
               // already a member? sign in
               Row(
@@ -93,8 +94,9 @@ class Register extends StatelessWidget {
                   ),
                   const SizedBox(width: 4),
                   GestureDetector(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>LoginPage()));
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) => LoginPage()));
                     },
                     child: const Text(
                       'Sign in',

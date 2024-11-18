@@ -4,7 +4,7 @@ import 'package:emobility/pages/login_subPages//forget_password.dart';
 
 import 'package:emobility/pages/login_subPages//register.dart';
 import 'package:flutter/material.dart';
-import 'package:emobility/components/custom_Button.dart';
+import 'package:emobility/components/custom_button.dart';
 import 'package:emobility/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
@@ -19,7 +19,6 @@ class LoginPage extends StatelessWidget {
     // check the password
 
     //then navigate the user to home screen
-
   }
 
   @override
@@ -33,7 +32,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 110),
 
             // Christ logo
-            Image.asset('lib/images/christ_logo.jpg', height: 80,width: 250),
+            Image.asset('lib/images/christ_logo.jpg', height: 80, width: 250),
 
             const SizedBox(height: 40),
 
@@ -44,8 +43,7 @@ class LoginPage extends StatelessWidget {
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 38,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
             ),
 
@@ -76,9 +74,11 @@ class LoginPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       // Navigate user to change password page
-                      Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => forget_password()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              forget_password()));
                     },
                     child: const Text(
                       'Forgot Password?',
@@ -92,8 +92,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 25),
 
             // sign in button
-            custom_Button(
-              onTap: (){
+            CustomButton(
+              onTap: () {
                 //Check for correct password
 
                 // Set userLogin sharedPref to true
@@ -102,9 +102,10 @@ class LoginPage extends StatelessWidget {
                 //Navigate the user to major screen
                 Navigator.of(context).popUntil(
                   // prevent user to enter login page again after a successful session
-                    (route) => route.isFirst,
+                  (route) => route.isFirst,
                 );
-                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => const HiddenDrawer()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => const HiddenDrawer()));
               },
               buttonData: "Sign in",
             ),
@@ -121,9 +122,10 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 4),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     // Navigate the user to registration page
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => Register()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => Register()));
                   },
                   child: const Text(
                     'Register now',

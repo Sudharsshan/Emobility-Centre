@@ -20,34 +20,32 @@ class ThemeClass {
   final Color offWhite = const Color(0xFFF9F3CC); // Off white
 
   final List<Color> pastelColors = [
-    Color(0xFFF4C2C2), // Pastel Pink
-    Color(0xFFDABFFF), // Pastel Purple
-    Color(0xFFAEC6CF), // Pastel Blue
-    Color(0xFFB2D8B2), // Pastel Green
+    const Color(0xFFF4C2C2), // Pastel Pink
+    const Color(0xFFDABFFF), // Pastel Purple
+    const Color(0xFFAEC6CF), // Pastel Blue
+    const Color(0xFFB2D8B2), // Pastel Green
     // Add more colors as needed
   ];
 
   // custom pastel colors
   final Color cremeGreen = const Color.fromARGB(255, 228, 253, 225);
   final Color fernGreen = const Color.fromARGB(255, 83, 123, 47);
-  final Color broccoli = const Color.fromARGB(255, 20,138,57);
-  final Color tealGreen = const Color.fromARGB(255, 14,103,85);
-  final Color grasshopper = const Color.fromARGB(255, 74,104,30);
-  final Color shamRock = const Color.fromARGB(255, 3,120,63);
-  final Color jadeGreen = const Color.fromARGB(255, 29,169,108);
-  final Color lawnGreen = const Color.fromARGB(255, 111,182,42);
+  final Color broccoli = const Color.fromARGB(255, 20, 138, 57);
+  final Color tealGreen = const Color.fromARGB(255, 14, 103, 85);
+  final Color grasshopper = const Color.fromARGB(255, 74, 104, 30);
+  final Color shamRock = const Color.fromARGB(255, 3, 120, 63);
+  final Color jadeGreen = const Color.fromARGB(255, 29, 169, 108);
+  final Color lawnGreen = const Color.fromARGB(255, 111, 182, 42);
 
   late TextStyle headStyle = TextStyle(
       color: primaryAccent,
       fontWeight: FontWeight.w600,
       fontSize: 35,
-      fontFamily: 'leagueSpartanBold'
-  );
+      fontFamily: 'leagueSpartanBold');
 
   late TextStyle contentStyle = TextStyle(
       color: secondaryAccent,
       fontWeight: FontWeight.w400,
       fontSize: 16,
-      fontFamily: 'IBMPlexSansBold'
-  );
+      fontFamily: 'IBMPlexSansBold');
 }

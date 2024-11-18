@@ -1,8 +1,9 @@
 import 'package:emobility/pages/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:emobility/components/custom_Button.dart';
+import 'package:emobility/components/custom_button.dart';
 import 'package:emobility/components/my_textfield.dart';
 
+// ignore: camel_case_types
 class verifyPassword extends StatelessWidget {
   verifyPassword({super.key});
 
@@ -14,9 +15,7 @@ class verifyPassword extends StatelessWidget {
   void sendOTP() {}
 
   // sign user in method
-  void verifyOTP() {
-
-  }
+  void verifyOTP() {}
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +26,13 @@ class verifyPassword extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               // Reset password
               const Text(
                 'Enter new Password',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 38,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
 
               const SizedBox(height: 25),
@@ -58,14 +55,15 @@ class verifyPassword extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              custom_Button(
+              CustomButton(
                   buttonData: "Create password",
-                  onTap: (){
+                  onTap: () {
                     // Handle password update here
 
                     // Then navigate the user to login screen
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => LoginPage()));
-              }),
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) => LoginPage()));
+                  }),
             ],
           ),
         ),
