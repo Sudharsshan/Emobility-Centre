@@ -76,13 +76,10 @@ class _EquipmentsPageState extends State<EquipmentsPage>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _fadeAnimation,
-      child: Column(
-        children: [
-          Container(
-            height: MediaQuery.sizeOf(context).height - 200,
-            width: MediaQuery.sizeOf(context).width,
-            padding: const EdgeInsets.all(8.0),
-            child: EquipmentCarousel(
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            EquipmentCarousel(
               equipments: equipments,
               onBookEquipment: _showBookingPopup, // Pass the booking function
               onShowParameters:
@@ -92,13 +89,13 @@ class _EquipmentsPageState extends State<EquipmentsPage>
               descriptions: descriptions,
               description: const [], // Pass the descriptions (for parameters)
             ),
-          ),
 
-          // a widget to prevent nav bar overflow
-          const SizedBox(
-            height: 100,
-          )
-        ],
+            // a widget to prevent nav bar overflow
+            const SizedBox(
+              height: 100,
+            )
+          ],
+        ),
       ),
     );
   }

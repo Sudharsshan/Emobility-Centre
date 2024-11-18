@@ -10,7 +10,8 @@ class Projects extends StatefulWidget {
   _ProjectsScreenState createState() => _ProjectsScreenState();
 }
 
-class _ProjectsScreenState extends State<Projects> with SingleTickerProviderStateMixin {
+class _ProjectsScreenState extends State<Projects>
+    with SingleTickerProviderStateMixin {
   bool _showProjects = false;
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
@@ -63,8 +64,9 @@ class _ProjectsScreenState extends State<Projects> with SingleTickerProviderStat
                   'Innovative Pathways to Sustainable Mobility',
                   style: TextStyle(
                     color: primaryColor,
-                    fontFamily: 'Lora',
-                    fontSize: 18,
+                    fontFamily: 'Lora_italic',
+                    fontSize: MediaQuery.sizeOf(context).width *
+                        0.04, // this makes the font size dynamic with respect to screen size
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -73,7 +75,8 @@ class _ProjectsScreenState extends State<Projects> with SingleTickerProviderStat
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: primaryColor,
-                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 10),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -99,15 +102,15 @@ class _ProjectsScreenState extends State<Projects> with SingleTickerProviderStat
               opacity: _fadeAnimation,
               child: _showProjects
                   ? ListView.builder(
-                itemCount: ProjectsPageContent().titles.length,
-                itemBuilder: (context, index) {
-                  return ProjectTile(
-                    index: index,
-                    projectsContent: ProjectsPageContent(),
-                    theme: theme,
-                  );
-                },
-              )
+                      itemCount: ProjectsPageContent().titles.length,
+                      itemBuilder: (context, index) {
+                        return ProjectTile(
+                          index: index,
+                          projectsContent: ProjectsPageContent(),
+                          theme: theme,
+                        );
+                      },
+                    )
                   : Container(), // Empty container when projects are hidden
             ),
           ),

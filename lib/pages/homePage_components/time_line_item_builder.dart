@@ -51,76 +51,82 @@ class TimeLineItemBuilder {
             // Content box
             Expanded(
               child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 16.0),
-                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.symmetric(vertical: 16),
                 decoration: BoxDecoration(
-                  color: backgroundFill,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 3,
-                      blurRadius: 5,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Box heading
-                    Text(
-                      title,
-                      style: headingStyle,
-                    ),
-                    const SizedBox(height: 8.0),
-
-                    // Return normal content boxes
-                    if (!gridView)
-                      ...descriptions.map((desc) => Padding(
-                            padding: const EdgeInsets.only(bottom: 8.0),
-                            child: Text(desc, style: contextStyle),
-                          )),
-
-                    // Return grid boxes specifically for 'Key Areas'
-                    if (gridView)
-                      GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10.0,
-                          mainAxisSpacing: 10.0,
-                        ),
-                        itemCount: descriptions.length,
-                        itemBuilder: (context, index) {
-                          // Returns the grid box with text content
-                          return Container(
-                            padding: const EdgeInsets.all(8.0),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8.0),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  spreadRadius: 3,
-                                  blurRadius: 5,
-                                  offset: const Offset(0, 3),
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: Text(
-                                descriptions[index],
-                                style: contextStyle,
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          );
-                        },
+                child: Container(
+                  padding: const EdgeInsets.all(16.0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: backgroundFill,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.2),
+                        spreadRadius: 3,
+                        blurRadius: 5,
+                        offset: const Offset(0, 3),
                       ),
-                  ],
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Box heading
+                      Text(
+                        title,
+                        style: headingStyle,
+                      ),
+                      const SizedBox(height: 8.0),
+
+                      // Return normal content boxes
+                      if (!gridView)
+                        ...descriptions.map((desc) => Padding(
+                              padding: const EdgeInsets.only(bottom: 8.0),
+                              child: Text(desc, style: contextStyle),
+                            )),
+
+                      // Return grid boxes specifically for 'Key Areas'
+                      if (gridView)
+                        GridView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10.0,
+                            mainAxisSpacing: 10.0,
+                          ),
+                          itemCount: descriptions.length,
+                          itemBuilder: (context, index) {
+                            // Returns the grid box with text content
+                            return Container(
+                              padding: const EdgeInsets.all(8.0),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(8.0),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    spreadRadius: 3,
+                                    blurRadius: 5,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: Center(
+                                child: Text(
+                                  descriptions[index],
+                                  style: contextStyle,
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),

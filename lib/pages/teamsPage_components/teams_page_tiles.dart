@@ -49,9 +49,12 @@ class TeamsPageTilesState extends State<TeamsPageTiles>
           // Heading quote with Playfair Display font
           Center(
             child: Text(
-              'Every journey starts from a single step',
-              style: GoogleFonts.playfairDisplay(
-                textStyle: TextStyle(fontSize: 24, color: primaryColor),
+              'United we stand, divided we fall',
+              style: TextStyle(
+                color: primaryColor,
+                fontFamily: 'Lora_italic',
+                fontSize: MediaQuery.sizeOf(context).width *
+                    0.045, // this makes the font size dynamic with respect to screen size
               ),
               textAlign: TextAlign.center,
             ),

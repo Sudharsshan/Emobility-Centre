@@ -60,46 +60,53 @@ class ProjectTile extends StatelessWidget {
             // main content
             Expanded(
               child: Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
                 decoration: BoxDecoration(
-                  color: ThemeClass().cremeGreen.withOpacity(0.85),
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: const [
-                    BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 10,
-                        spreadRadius: 1,
-                        offset: Offset(0, 3)),
-                  ],
                 ),
 
                 // projects box
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // project title
-                    Text(
-                      projectsContent.titles[index],
-                      style: TextStyle(
-                        color: primaryColor,
-                        fontFamily: 'PlayfairDisplay',
-                        fontSize: 20,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: ThemeClass().cremeGreen.withOpacity(0.85),
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 10,
+                          spreadRadius: 1,
+                          offset: Offset(0, 3)),
+                    ],
+                  ),
+                  padding: const EdgeInsets.all(10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // project title
+                      Text(
+                        projectsContent.titles[index],
+                        style: TextStyle(
+                          color: primaryColor,
+                          fontFamily: 'PlayfairDisplay',
+                          fontSize: 20,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 5),
+                      const SizedBox(height: 5),
 
-                    // project description
-                    Text(
-                      projectsContent.description[index],
-                      style: TextStyle(
-                        color: secondaryColor,
-                        fontFamily: 'Lora',
-                        fontSize: 16,
+                      // project description
+                      Text(
+                        projectsContent.description[index],
+                        style: TextStyle(
+                          color: secondaryColor,
+                          fontFamily: 'Lora',
+                          fontSize: 16,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -115,6 +115,9 @@ flutter:
     # app icon image
     - lib/images/appIcon/app_icon.jpg
 
+    # Wallpapers
+    - lib/images/wallpapers/home_page/centre_of_excellence.jpg
+
   fonts:
     - family: playWrite
       fonts:
@@ -138,3 +141,7 @@ flutter:
         - asset: lib/fonts/Lora,Playfair_Display/Lora/static/Lora-Regular.ttf
         - asset: lib/fonts/Lora,Playfair_Display/Lora/static/Lora-Bold.ttf
           weight: 700
+    - family: Lora_italic
+      fonts:
+        - asset: lib/fonts/Lora,Playfair_Display/Lora/Lora-Italic-VariableFont_wght.ttf
+          weight: 400

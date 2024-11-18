@@ -54,8 +54,9 @@ class HomeScreen extends State<Home> with SingleTickerProviderStateMixin {
 
     return FadeTransition(
       opacity: _fadeAnimation,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+      child: // Home page content
+          Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
         child: homeScreen(context, primaryColor, secondaryColor),
       ),
     );
@@ -176,7 +177,7 @@ class HomeScreen extends State<Home> with SingleTickerProviderStateMixin {
         ),
 
         // Additional box to keep the last widget above the navigation bar
-        const SizedBox(height: 80),
+        const SizedBox(height: 100),
       ],
     );
   }
