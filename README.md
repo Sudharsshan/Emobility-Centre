@@ -2,6 +2,10 @@
 
 A flutter app used to monitor and provide the rental info on lab equipments available in Centre of Emobility, Christ University.
 
+# IMPORTANT MESSAGE
+*This repo is second version which was initialized due to problems faced in versioning of libraries utilized within the project* <br>
+First repo: [https://github.com/Sudharsshan/emobility](https://github.com/Sudharsshan/emobility)
+
 ## Basic Info
 
 This app provides the rental info on the available lab equipments along with an option to book them.
